@@ -1,0 +1,68 @@
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: auto;
+}
+
+.example-card {
+  max-width: 400px;
+
+}
+
+.example-card img {
+  height: 200px;       
+  width: 100%;       
+  object-fit: cover;   
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover; 
+}
+
+.carousel-item img {
+  height: 400px;      
+  object-fit: cover;  
+  object-position: center; 
+}
+
+h2 {
+    text-align: center; 
+    margin-bottom: 0;
+}
+
+mat-grid-list {
+    margin: 10px 0px;
+}
+
+mat-grid-tile {
+    padding: 2px;
+    border-radius: 30px;
+}
+
+mat-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+mat-card-actions {
+    display: flex;
+    justify-content: space-around;
+}
+
+mat-card-actions p {
+    color: red;
+    font-size: 30px;
+}
+
+mat-card img {
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
