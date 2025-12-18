@@ -4,21 +4,21 @@
       "id": 1,
       "produto": "Jogo 1",
       "descricao": "Descrição do jogo 1",
-      "foto": "jogo1.PNG",
+      "foto": "lh-games-loja/src/assets/img/jogo1.PNG",
       "preco": 299.90
     },
     {
       "id": 2,
       "produto": "Jogo 2",
       "descricao": "Descrição do jogo 2",
-      "foto": "jogo2.PNG",
+      "foto": "lh-games-loja/src/assets/img/jogo2.PNG",
       "preco": 199.90
     },
     {
       "id": 3,
       "produto": "Jogo 3",
       "descricao": "Descrição do jogo 3",
-      "foto": "jogo3.PNG",
+      "foto": "lh-games-loja/src/assets/img/jogo3.PNG",
       "preco": 399.90
     }
   ]
