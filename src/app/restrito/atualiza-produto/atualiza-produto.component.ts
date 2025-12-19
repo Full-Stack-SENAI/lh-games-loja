@@ -34,12 +34,17 @@ export class AtualizaProdutoComponent implements OnInit {
     })
   }
 
-  atualizar(id: number) {
-    this._produtoService.atualizarProduto(id,this.produto).subscribe(
-      produto => {this.produto = new Produto(0,"","","",0)},
-      err => {console.log("erro au atualizar")}
+atualizar(id: number){
+    this._produtoService.atualizarProduto(id, this.produto).subscribe(
+      produto => {
+        this.produto = new Produto(0,"","","",0);
+        // O comando certo: roda SÓ quando o banco avisa que terminou
+        this._router.navigate(["/restrito/lista"]);
+      },
+      err => {
+        alert("Ops! Erro ao atualizar. Verifique se o servidor está rodando.");
+        console.log("erro ao atualizar");
+      }
     );
-
-    this._router.navigate(["/restrito/lista"]);
   }
 }

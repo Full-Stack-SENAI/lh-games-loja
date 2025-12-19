@@ -52,6 +52,6 @@ export class ListaProdutoComponent {
     );
 
     // window.location.href = "/restrito/lista";
-    this.router.navigate(["/restrito/lista"]);
+    // this.router.navigate(["/restrito/lista"]);
   }
 }
