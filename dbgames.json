@@ -22,11 +22,11 @@
       "preco": 399.9
     },
     {
-      "id": 4,
+      "id": "4",
       "produto": "Jogo 4",
       "descricao": "Descrição do Jogo 4",
       "foto": "jogo1.PNG",
-      "preco": 229.9
+      "preco": 289.9
     }
   ]
 }
