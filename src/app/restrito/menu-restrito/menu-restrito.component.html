@@ -3,7 +3,7 @@
         <span><a routerLink="/restrito/lista">Listar Produtos</a></span>
         <span><a routerLink="/restrito/cadastro">Cadastrar Produto</a></span>
         <span style="flex: 1 1 auto;"></span>
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <button mat-icon-button (click)="logout()" class="example-icon" aria-label="Example icon-button with share icon">
             <span class="material-icons">logout</span>
         </button>
     </mat-toolbar-row>

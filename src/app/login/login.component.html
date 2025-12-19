@@ -1,16 +1,28 @@
-<main>
-    <section id="section-login">
+<main class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-10 col-lg-6">
+      
+      <div class="card shadow p-4 mb-5 bg-white rounded">
+        
+        <h2 class="text-center mb-4 font-weight-bold">Login</h2>
+        
         <form>
-            <div>
-                <label for="usuario">Email</label>
-                <input name="usuario" required type="text"
-                [(ngModel)]="usuario">
-                <br>
-                <label for="password">password</label>
-                <input name="password" type="password"
-                [(ngModel)]="senha">
-            </div>
-            <button (click)="fazerLogin()">Login</button>
+          <div class="form-group mb-3">
+            <label for="usuario" class="font-weight-bold">Usuário</label>
+            <input type="text" class="form-control" name="usuario" [(ngModel)]="usuario" placeholder="Digite seu usuário">
+          </div>
+
+          <div class="form-group mb-4">
+            <label for="senha" class="font-weight-bold">Senha</label>
+            <input type="password" class="form-control" name="senha" [(ngModel)]="senha" placeholder="Digite sua senha">
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg btn-block w-100" (click)="fazerLogin()">
+            Login
+          </button>
         </form>
-    </section>
+
+      </div>
+    </div>
+  </div>
 </main>

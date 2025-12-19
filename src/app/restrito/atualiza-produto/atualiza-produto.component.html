@@ -1,44 +1,50 @@
-<main>
-    <h1>Atualiza jogo</h1>
-    <section id="section-cadastro">
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+
+      <div class="card shadow p-4 mb-5 bg-white rounded">
+        
+        <h2 class="text-center mb-4 font-weight-bold">Atualizar Jogo</h2>
+
         <form *ngIf="produto">
-            
-            <div class="col-auto">
-                <label for="id">Id</label>
-                <input type="text" class="form-control" name="id" [(ngModel)]="produto.id" readonly>
-            </div>
-            <br>
 
-            <div class="col-auto">
-                <label for="produto">Nome do Produto</label>
-                <input type="text" class="form-control" name="produto" [(ngModel)]="produto.produto">
-            </div>
-            <br>
+          <div class="form-group mb-3">
+            <label for="id" class="font-weight-bold">ID:</label>
+            <input type="text" class="form-control-plaintext border px-2" name="id" [(ngModel)]="produto.id" readonly>
+          </div>
 
-            <div class="col-auto">
-                <label for="descricao">Descrição</label>
-                <input type="text" class="form-control" name="descricao" [(ngModel)]="produto.descricao">
-            </div>
-            <br>
+          <div class="form-group mb-3">
+            <label for="produto" class="font-weight-bold">Nome do Produto:</label>
+            <input type="text" class="form-control" name="produto" [(ngModel)]="produto.produto" placeholder="Digite o nome do jogo">
+          </div>
 
-            <div class="col-auto">
-                <label for="foto">Foto</label>
-                <input type="text" class="form-control" name="foto" [(ngModel)]="produto.foto">
-            </div>
-            <br>
+          <div class="form-group mb-3">
+            <label for="descricao" class="font-weight-bold">Descrição:</label>
+            <textarea class="form-control" name="descricao" rows="3" [(ngModel)]="produto.descricao"></textarea>
+          </div>
 
-            <div class="col-auto">
-                <label for="preco">Preço</label>
-                <input type="number" class="form-control" name="preco" [(ngModel)]="produto.preco">
-            </div>
-            <br>
+          <div class="form-group mb-3">
+            <label for="foto" class="font-weight-bold">Foto (URL):</label>
+            <input type="text" class="form-control" name="foto" [(ngModel)]="produto.foto">
+            <small class="form-text text-muted">Cole o link da imagem do jogo.</small>
+          </div>
 
-            <div class="col-auto">
-                <button type="submit" class="btn btn-primary mb-3" (click)="atualizar(produto.id)">
-                    Atualizar
-                </button>
+          <div class="form-group mb-4">
+            <label for="preco" class="font-weight-bold">Preço (R$):</label>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">R$</span>
+                </div>
+                <input type="number" class="form-control" name="preco" [(ngModel)]="produto.preco" step="0.01">
             </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg btn-block w-100" (click)="atualizar(produto.id)">
+            Atualizar
+          </button>
 
         </form>
-    </section>
-</main>
+      </div>
+    </div>
+  </div>
+</div>
