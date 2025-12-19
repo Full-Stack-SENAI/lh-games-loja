@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Produto } from '../../models/Produto.model';
-import { ProdutoService } from '../../produto.service';
+import { Produto } from 'src/app/models/Produto.model';
+import { ProdutoService } from 'src/app/produto.service';
 
 @Component({
   selector: 'app-lista-produto',
@@ -12,26 +12,29 @@ export class ListaProdutoComponent implements OnInit {
 
   public produtos: Produto[] = [];
 
-  constructor(private _produtoService: ProdutoService, private _router: Router) { }
+  constructor(private _produtoService: ProdutoService, private router: Router) { }
 
   ngOnInit(): void {
     this.listarProdutos();
   }
 
   listarProdutos(): void {
-    this._produtoService.getProdutos().subscribe(
-      retornoData => {
-        this.produtos = retornoData.map(item => {
-          return new Produto(
-            item.id,
-            item.produto,
-            item.descricao,
-            item.foto,
-            item.preco
-          );
-        });
-      }
-    )
+    this._produtoService.getProdutos()
+      .subscribe(
+        retornaProduto => {
+          this.produtos = retornaProduto.map(
+            item => {
+              return new Produto(
+                item.id,
+                item.produto,
+                item.descricao,
+                item.foto,
+                item.preco
+              );
+            }
+          )
+        }
+      )
   }
 
   excluir(id: number) {
@@ -39,8 +42,10 @@ export class ListaProdutoComponent implements OnInit {
       produto => {
         this.listarProdutos();
       },
-      err => { alert("Erro ao Excluir") }
+      err => { console.log("erro ao Excluir") }
     );
-    this._router.navigate(["/restrito/lista"]);
+
+    // window.location.href = "/restrito/lista";
+    this.router.navigate(["/restrito/lista"]);
   }
 }
