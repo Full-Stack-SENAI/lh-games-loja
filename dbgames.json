@@ -27,6 +27,13 @@
       "descricao": "Descrição do Jogo 4",
       "foto": "jogo1.PNG",
       "preco": 289.9
+    },
+    {
+      "id": 0,
+      "produto": "",
+      "descricao": "",
+      "foto": "",
+      "preco": 0
     }
   ]
 }

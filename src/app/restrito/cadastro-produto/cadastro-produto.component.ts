@@ -10,9 +10,9 @@ import { ProdutoService } from 'src/app/produto.service';
 })
 export class CadastroProdutoComponent implements OnInit {
 
-  public produto: Produto = new Produto(0,"","","",0);
+  public produto: Produto = new Produto(0, "", "", "", 0);
 
-  constructor(private _produtoService: ProdutoService, private router:Router){ }
+  constructor(private _produtoService: ProdutoService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -20,16 +20,13 @@ export class CadastroProdutoComponent implements OnInit {
   cadastrar() {
     this._produtoService.cadastrarProduto(this.produto).subscribe(
       produto => {
-        this.produto = new Produto(0,"","","",0);
-        alert("Cadastro Efetuado com Sucesso!")
+        this.produto = new Produto(0, "", "", "", 0); // Limpa o formulário
+        alert("Cadastro Efetuado com Sucesso");
+        this.router.navigate(["/restrito/lista"]); // Volta para a lista
       },
       err => {
-        alert("erro ao cadastrar")
+        alert("Erro ao Cadastrar");
       }
     );
-
-    this.router.navigate(["/restrito/lista"]);
-
   }
-
 }

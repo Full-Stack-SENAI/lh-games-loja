@@ -9,49 +9,45 @@ import { ProdutoService } from 'src/app/produto.service';
   templateUrl: './lista-produto.component.html',
   styleUrls: ['./lista-produto.component.css']
 })
+export class ListaProdutoComponent implements OnInit {
 
-export class ListaProdutoComponent {
-  public produtos: Produto[] = [ ];
-  public produto: Produto = new Produto(0,"","","",0);
+  public produtos: Produto[] = [];
 
-  constructor(private _produtoService: ProdutoService,
-    private router:Router,
-    private _loginService: LoginService){}
+  constructor(
+    private _produtoService: ProdutoService,
+    private router: Router,
+    private _loginService: LoginService
+  ) { }
 
   ngOnInit(): void {
     this.listarProdutos();
-      this._loginService.setMostraMenu(false);
+    this._loginService.setMostraMenu(false); // Esconde o menu principal na área restrita
   }
 
   listarProdutos(): void {
-    this._produtoService.getProdutos()
-      .subscribe(
-        retornaProduto => {
-          this.produtos = retornaProduto.map(
-            item => {
-              return new Produto(
-                item.id,
-                item.produto,
-                item.descricao,
-                item.foto,
-                item.preco
-              );
-            }
-          )
-        }
-      )
+    this._produtoService.getProdutos().subscribe(
+      retornaProduto => {
+        this.produtos = retornaProduto.map(
+          item => {
+            return new Produto(
+              item.id,
+              item.produto,
+              item.descricao,
+              item.foto,
+              item.preco
+            );
+          }
+        )
+      }
+    )
   }
 
   excluir(id: number) {
-
     this._produtoService.removerProduto(id).subscribe(
-      vaga => {
-        this.listarProdutos();
+      produto => {
+        this.listarProdutos(); // Atualiza a lista após excluir
       },
-      err => { console.log("erro ao Excluir") }
+      err => { console.log("Erro ao Excluir") }
     );
-
-    // window.location.href = "/restrito/lista";
-    // this.router.navigate(["/restrito/lista"]);
   }
 }

@@ -1,15 +1,14 @@
 main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 700px; /* Garante altura para centralizar verticalmente */
 }
 
 #section-login {
-    height: fit-content;
-    width: 400px;
-    border-radius: 10px;
-    border: 1px solid black;
-    padding: 20px;
-    background-color: white;
+  /* O estilo do card já está sendo tratado pelo Bootstrap no HTML, 
+     mas você pode reforçar o alinhamento aqui se precisar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
